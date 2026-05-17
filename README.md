@@ -1,12 +1,13 @@
 # Docker Microservices Platform
 
-Production-ready Dockerized microservices platform using:
+Production-ready Dockerized microservices platform built using:
 
 - Nginx
 - Node.js
 - PostgreSQL
 - Redis
 - Docker Compose
+- GitHub Actions CI/CD
 
 ---
 
@@ -24,19 +25,22 @@ Client → Nginx → Frontend → Backend API → PostgreSQL / Redis
 - PostgreSQL integration
 - Redis caching
 - Persistent Docker volumes
-- Docker Compose orchestration
+- GitHub Actions CI/CD pipeline
+- Automated Docker image builds
 
 ---
 
 # Tech Stack
 
-- Docker
-- Docker Compose
-- Node.js
-- Express
-- PostgreSQL
-- Redis
-- Nginx
+| Technology | Purpose |
+|---|---|
+| Docker | Containerization |
+| Docker Compose | Orchestration |
+| Nginx | Reverse proxy |
+| Node.js | Backend API |
+| PostgreSQL | Database |
+| Redis | Caching |
+| GitHub Actions | CI/CD |
 
 ---
 
@@ -46,12 +50,14 @@ Client → Nginx → Frontend → Backend API → PostgreSQL / Redis
 frontend/
 backend/
 nginx/
+.github/workflows/
 docker-compose.yaml
+README.md
 ```
 
 ---
 
-# Run Project
+# Run Locally
 
 ```bash
 docker compose up --build
@@ -67,5 +73,18 @@ docker compose up --build
 | /api/health | Health check |
 | /api/db | PostgreSQL test |
 | /api/redis | Redis test |
+
+---
+
+# CI/CD Pipeline
+
+The GitHub Actions workflow automatically:
+
+- Validates Docker Compose
+- Builds Docker containers
+- Automates CI/CD workflow execution
+
+Pipeline triggers on:
+- push to main
 
 ---
